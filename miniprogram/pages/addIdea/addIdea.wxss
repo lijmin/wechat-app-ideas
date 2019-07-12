@@ -1,0 +1,60 @@
+/* pages/edit-information/edit-information.wxss */
+.j-row1-item{
+    padding:30rpx 0;
+    border-bottom:1px solid #e6e6e6;
+}
+.j-row1-logo image {
+    display: block;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 10rpx;
+}
+.j-row1-t{
+    font-size: 34rpx;
+    color: #666;
+}
+.j-row1-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: 34rpx;
+    color: #666;
+}
+.j-row1-laber {
+    color: #333;
+    font-size: 34rpx;
+    margin-left: 30rpx;
+}
+.j-row1-ta{
+    border-bottom:1px solid #e6e6e6;
+}
+.j-row1-ta textarea{
+    padding-top:30rpx;
+    height:100px;
+    width:100%;
+    font-size: 34rpx;
+}
+.j-row1-u{
+    padding-top:30rpx;
+    padding-bottom: 30rpx;
+}
+.j-row1-u .j-row1-b{
+    width:192rpx;
+    height:136rpx;
+    border:1px solid #b3b3b3;
+    text-align: center;
+    line-height:114rpx;
+}
+.j-row1-bt{
+     color: #666;
+    font-size: 28rpx;
+}
+.j-row0-btn {
+    background-color: #007aff;
+    color: #fff;
+}
+.j-row0-layout {
+    margin: 60rpx 30rpx 0 30rpx;
+}

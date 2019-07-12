@@ -1,0 +1,161 @@
+
+page {
+    background-color: #f4f4f4;
+}
+
+.bg-fff {
+    background-color: #fff;
+}
+
+
+button::after {
+    content: "";
+    width: 0;
+    height: 0;
+}
+
+.r {
+    position: relative;
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-a-c {
+    align-items: center;
+}
+
+.flex-j-c {
+    justify-content: center;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.t-r {
+    text-align: right;
+}
+
+.t-l {
+    text-align: left;
+}
+
+.mb-5 {
+    margin-bottom: 5rpx;
+}
+
+.mb-10 {
+    margin-bottom: 10rpx;
+}
+
+.mb-20 {
+    margin-bottom: 20rpx;
+}
+
+.mb-30 {
+    margin-bottom: 30rpx;
+}
+
+.ml-10 {
+    margin-left: 10rpx;
+}
+
+.ml-20 {
+    margin-left: 20rpx;
+}
+
+.ml-30 {
+    margin-left: 30rpx;
+}
+
+.mt-5 {
+    margin-top: 5rpx;
+}
+
+.mt-10 {
+    margin-top: 10rpx;
+}
+
+.mt-20 {
+    margin-top: 20rpx;
+}
+
+.mt-30 {
+    margin-top: 30rpx;
+}
+
+.mr-10 {
+    margin-right: 10rpx;
+}
+
+.mr-20 {
+    margin-right: 20rpx;
+}
+
+.mr-30 {
+    margin-right: 30rpx;
+}
+
+.pt-30 {
+    padding-top: 30rpx;
+}
+
+.pb-30 {
+    padding-bottom: 30rpx;
+}
+
+.arrow {
+    position: relative;
+    padding-right: 16px;
+}
+
+.arrow::after {
+    content: " ";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-width: 1px 1px 0 0;
+    border-color: #999;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    top: -2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    right: 0;
+}
+
+::placeholder {
+    color: #b3b3b3;
+}
+
+button {
+    font-size: 34rpx;
+}
+
+.v-m {
+    vertical-align: middle;
+}
+
+.ellipsis-1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}

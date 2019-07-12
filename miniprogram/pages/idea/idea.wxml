@@ -1,0 +1,9 @@
+<view class="bg-fff pt-30">
+    <view class='layout row-text1'>{{idea.title}}</view>
+    <swiper class="swiper" wx:if="{{idea.images}}" indicator-dots="true" >
+        <swiper-item wx:for="{{idea.images}}" wx:key="item" wx:for-index="index">
+            <image src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+ <view class='layout row-text2'>{{idea.content}}</view>
+</view>

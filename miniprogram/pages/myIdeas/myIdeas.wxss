@@ -1,0 +1,33 @@
+
+.c-row0-t1 {
+    color: #999;
+    font-size: 32rpx;
+}
+
+
+.layout {
+    /* margin: 0 30rpx; */
+    padding: 30rpx 30rpx;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+.i-row3-t1 {
+    font-size: 34rpx;
+    color: #333;
+}
+
+.i-row3-t2 {
+    font-size: 28rpx;
+    color: #666;
+}
+
+.c-row1-t1 {
+    font-size: 32rpx;
+    color: #0abc5a;
+}
+
+.c-row1-t2 {
+    font-size: 32rpx;
+    color: #007aff;
+}

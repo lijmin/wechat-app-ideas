@@ -1,0 +1,20 @@
+<!--miniprogram/pages/me/me.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+        <open-data type="userNickName"></open-data>
+    </view>
+
+  <!-- add -->
+  <view class="row">
+    <navigator url="../addIdea/addIdea" open-type="navigate" class="row-text">
+      <text>记录想法</text>
+    </navigator>
+  </view>
+
+  <view class="row">
+    <navigator url="../myIdeas/myIdeas" open-type="navigate" class="row-text">
+      <text>我的想法</text>
+    </navigator>
+  </view>
+</view>

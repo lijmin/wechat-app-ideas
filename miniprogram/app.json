@@ -1,0 +1,35 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/me/me",
+        "pages/addIdea/addIdea",
+        "pages/myIdeas/myIdeas",
+        "pages/idea/idea"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "云开发 QuickStart",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#666",
+        "selectedColor": "#007aff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/home-n.png",
+                "selectedIconPath": "images/home-s.png"
+            },
+            {
+                "pagePath": "pages/me/me",
+                "text": "我的",
+                "iconPath": "images/me-n.png",
+                "selectedIconPath": "images/me-s.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

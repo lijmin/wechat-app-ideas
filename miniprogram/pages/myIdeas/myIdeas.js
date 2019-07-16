@@ -89,10 +89,16 @@ Page({
     //删除
     deleteIdea: function(index, id) {
         return ideaDao.deleteIdea(id).then(() => {
+            return wx.cloud.deleteFile({
+                fileList: this.data.ideas[index].images
+            })
+        }).then(res => {
             this.data.ideas.splice(index, 1)
             this.setData({
                 ideas: this.data.ideas
             })
+        }).catch(error => {
+            console.log(error)
         })
     }
 

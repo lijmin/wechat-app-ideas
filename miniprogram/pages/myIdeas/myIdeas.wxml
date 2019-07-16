@@ -1,4 +1,4 @@
-<view class="bg-fff pt-30">
+<view class="bg-fff ">
     <navigator url="../idea/idea?ideaId={{item._id}}" open-type="navigate" class="flex flex-a-c layout" wx:for="{{ideas}}" wx:for-index="index" wx:key="item" bindlongpress='bindlongpress' data-id='{{item._id}}' data-status='{{item.status}}' data-index='{{index}}'>
         <view class="flex-1 ml-20">
             <view class="mb-5">

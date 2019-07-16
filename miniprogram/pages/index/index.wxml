@@ -1,18 +1,20 @@
+<view class="bg-fff">
 
-<view class="bg-fff pt-30">
+    <view class="i-row1-name c-ff8928">创意大厅</view>
 
-    <view class="row-text flex flex-a-c layout">创意大厅</view>
-
-    <navigator url="../idea/idea?ideaId={{item._id}}" open-type="navigate" class="flex flex-a-c layout" wx:for="{{ideas}}" wx:key="item">
-        <view class="flex-1 ml-20">
-            <view class="mb-5">
-                <text class="i-row3-t1">{{item.title}}</text>
+    <navigator url="../idea/idea?ideaId={{item._id}}" open-type="navigate" wx:for="{{ideas}}" wx:key="item">
+        <view class="flex flex-a-c layout">
+            <view>
+                <image src="{{item.images.length > 0 ? item.images[0]: item.avatarUrl}}" class="i-row3-logo"></image>
             </view>
-            <view class="i-row3-t2">{{item.createTime}}</view>
+            <view class="flex-1 ml-20">
+                <view class="mb-5">
+                    <text class="i-row3-t1">{{item.title}}</text>
+                </view>
+                <view class="i-row3-t2">{{item.nickName}}：{{item.createTime}}</view>
+            </view>
         </view>
-        <view class="t-r">
-            <text class="c-row1-t1"></text>
-        </view>
+        <view class="clear"></view>
     </navigator>
 
 </view>

@@ -11,10 +11,12 @@ export default class IdeaDao {
     }
 
     // 添加想法
-    static addIdea(title, content, images) {
+    static addIdea(nickName, avatarUrl, title, content, images) {
         const db = wx.cloud.database()
         return db.collection(IdeaDao.database).add({
             data: {
+                nickName: nickName,
+                avatarUrl: avatarUrl,
                 status: 0,
                 createTime: new Date(),
                 title: title,
@@ -39,7 +41,10 @@ export default class IdeaDao {
                     success: res => {
                         let r = res.data.map((item) => {
                             return {
+                                avatarUrl: item.avatarUrl,
+                                nickName: item.nickName,
                                 _id: item._id,
+                                images: item.images,
                                 title: item.title,
                                 content: item.content,
                                 status: item.status,
@@ -68,7 +73,10 @@ export default class IdeaDao {
                     success: res => {
                         let r = res.data.map((item) => {
                             return {
+                                avatarUrl: item.avatarUrl,
+                                nickName: item.nickName,
                                 _id: item._id,
+                                images: item.images,
                                 title: item.title,
                                 content: item.content,
                                 status: item.status,
@@ -105,8 +113,8 @@ export default class IdeaDao {
             .remove();
     }
     /**
-    * 获取单个想法
-    */
+     * 获取单个想法
+     */
     static getIdeaById(ideaId) {
         const db = wx.cloud.database()
         return db.collection(IdeaDao.database)

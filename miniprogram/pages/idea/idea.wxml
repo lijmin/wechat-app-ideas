@@ -1,9 +1,25 @@
 <view class="bg-fff pt-30">
-    <view class='layout row-text1'>{{idea.title}}</view>
-    <swiper class="swiper" wx:if="{{idea.images}}" indicator-dots="true" >
+
+
+    <view class="flex flex-a-c layout">
+        <view>
+            <image src="{{idea.avatarUrl}}" class="i-row3-logo"></image>
+        </view>
+        <view class="flex-1 ml-20">
+            <view class="mb-5">
+                <text class="i-row3-t1">{{idea.title}}</text>
+            </view>
+            <view class="i-row3-t2">{{idea.nickName}}：{{idea.createTime}}</view>
+        </view>
+    </view>
+
+
+    <swiper class="swiper" wx:if="{{idea.images}}" indicator-dots="true">
         <swiper-item wx:for="{{idea.images}}" wx:key="item" wx:for-index="index">
-            <image src="{{item}}"></image>
+            <image src="{{item}}" data-list="{{idea.images}}" data-src="{{item}}" bindtap='previewImage'></image>
         </swiper-item>
     </swiper>
- <view class='layout row-text2'>{{idea.content}}</view>
+
+    <view class='layout row-text2'>{{idea.content}}</view>
+
 </view>

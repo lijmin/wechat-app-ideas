@@ -10,12 +10,33 @@ Page({
      */
     data: {
         loading: false,
+        userInfo: null,
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
         images: []
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {},
+    onLoad: function(options) {
+        let that = this;
+        // 查看是否授权
+        wx.getSetting({
+            success(res) {
+                if (res.authSetting['scope.userInfo']) {
+                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+                    wx.getUserInfo({
+                        success: function (res) {
+                            const userInfo = JSON.parse(res.rawData);
+                            that.setData({
+                                userInfo: userInfo
+                            })
+                           
+                        }
+                    })
+                }
+            }
+        })
+    },
     /**选择图片*/
     bindChooseImage: function(e) {
         const that = this;
@@ -46,27 +67,33 @@ Page({
         this.setData({
             loading: true
         });
-       
+      
         if (this.data.images.length > 0) {
             this.uploadImage().then(res => {
                 const ids = res.map(item => {
                     return item.fileID;
                 })
-                return ideaDao.addIdea(title, content, ids);
+                return ideaDao.addIdea(this.data.userInfo.nickName, this.data.userInfo.avatarUrl, title, content, ids);
             }).then(res => {
                 tip.toast('添加成功')
                 this.setData({
                     loading: false
                 });
+                wx.navigateBack({
+                    
+                })
             }).catch(err => {
                 console.log(err)
             });
         } else {
-            ideaDao.addIdea(title, content).then(res => {
+            ideaDao.addIdea(this.data.userInfo.nickName, this.data.userInfo.avatarUrl,title, content).then(res => {
                 tip.toast('添加成功')
                 this.setData({
                     loading: false
                 });
+                wx.navigateBack({
+                    
+                })
             }).catch(err => {
                 console.log(err)
             });
@@ -89,5 +116,9 @@ Page({
         });
         return Promise.all(uploads);
     },
-
+    bindGetUserInfo(e) {
+        this.setData({
+            userInfo: e.detail.userInfo
+        })
+    }
 })

@@ -4,7 +4,8 @@
         "pages/me/me",
         "pages/addIdea/addIdea",
         "pages/myIdeas/myIdeas",
-        "pages/idea/idea"
+        "pages/idea/idea",
+        "pages/updateIdea/updateIdea"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",

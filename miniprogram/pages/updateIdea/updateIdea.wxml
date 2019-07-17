@@ -1,0 +1,26 @@
+<form bindsubmit="formSubmit">
+    <view class="flex flex-a-c bg-fff j-row1-item " bindtap='bindChooseImage'>
+        <view class="ml-30 mr-30 arrow">选择图片（ {{images.length}} ）</view>
+    </view>
+    <view class="flex flex-a-c bg-fff j-row1-item">
+        <view wx:for="{{images}}" wx:key="item">
+            <view class="j-row1-logo ml-30">
+                <image src="{{item}}"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="bg-fff pb-20 j-row1-ta">
+        <view class="ml-30 mr-30 pt-30 pb-30">
+            <input type="text" name="title" placeholder="请输入标题" value="{{title}}"/>
+        </view>
+    </view>
+    <view class="bg-fff pb-20 j-row1-ta">
+        <view class="ml-30 mr-30">
+            <textarea maxlength="-1" name="content" placeholder="请填写您的想法" value="{{content}}"></textarea>
+        </view>
+    </view>
+    <view class="j-row0-layout">
+        <button formType="submit" class="j-row0-btn" loading='{{loading}}'>{{loading ? '': '保存'}}</button>
+    </view>
+</form>

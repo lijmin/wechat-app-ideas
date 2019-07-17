@@ -19,6 +19,7 @@ export default class IdeaDao {
                 avatarUrl: avatarUrl,
                 status: 0,
                 createTime: new Date(),
+                lastUpdateTime: new Date(),
                 title: title,
                 content: content,
                 images: images
@@ -98,7 +99,30 @@ export default class IdeaDao {
             .doc(id)
             .update({
                 data: {
+                    lastUpdateTime: new Date(),
                     status: status
+                }
+            })
+    }
+    /**
+    * 修改想法
+    */
+    static updateIdea(id, title, content, delImages, addImages) {
+        if(delImages){
+            wx.cloud.deleteFile({
+                fileList: delImages
+            })
+        }
+
+        const db = wx.cloud.database()
+        return db.collection(IdeaDao.database)
+            .doc(id)
+            .update({
+                data: {
+                    title: title,
+                    content: content,
+                    images: addImages,
+                    lastUpdateTime: new Date()
                 }
             })
     }

@@ -53,7 +53,9 @@ Page({
                     this.shareIdea(index, id, status);
                     break;
                 case 1:
-                    tip.toast('占个坑')
+                    wx.navigateTo({
+                        url: '../updateIdea/updateIdea?ideaId='+id,
+                    })
                     break;
                 case 2:
                     tip.confirm('确定删除吗').then(() => {
